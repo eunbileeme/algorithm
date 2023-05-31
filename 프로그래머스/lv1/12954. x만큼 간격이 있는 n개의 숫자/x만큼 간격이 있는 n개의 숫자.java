@@ -9,7 +9,6 @@ class Solution {
             // long 타입의 answer 이름을 가진 배열
             answer[i] = y; 
         }
-        
         return answer;
     }
 }
