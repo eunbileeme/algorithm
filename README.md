@@ -1,4 +1,4 @@
 # 📖 algorithm
 
 - platform : programmers
-- language : Java
+- language : java
