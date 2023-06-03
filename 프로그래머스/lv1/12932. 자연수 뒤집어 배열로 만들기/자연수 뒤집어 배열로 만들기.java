@@ -1,4 +1,5 @@
 // int → String → char array → int array
+// n의 각 자리 숫자를 하나씩 가져와야 하므로, String array가 아닌 char array로 변환을 수행
 
 import java.util.*;
 
