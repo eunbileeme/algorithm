@@ -7,7 +7,7 @@ class Solution {
         if (s.length() % 2 == 0) {
             // 자바는 / 진행 시, 소수점까지 반환
             // 따라서 강제 형변환 수행
-            int i = (int) s.length() / 2;
+            int i = s.length() / 2;
             // char 타입은 유니코드 문자를 나타내므로
             // i - 1번째 문자와 i번째 문자의 정수값이 더해짐
             
