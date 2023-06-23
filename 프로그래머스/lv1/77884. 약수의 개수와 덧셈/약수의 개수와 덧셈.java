@@ -10,7 +10,6 @@ class Solution {
                 if (i % j == 0) {
                     count ++;
                 }
-                
             }
             
             if (count % 2 == 0) {
