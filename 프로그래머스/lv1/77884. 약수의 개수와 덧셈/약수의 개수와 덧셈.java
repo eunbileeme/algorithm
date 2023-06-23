@@ -11,7 +11,6 @@ class Solution {
                     count ++;
                 }
             }
-            
             if (count % 2 == 0) {
                 answer += i;
             }
