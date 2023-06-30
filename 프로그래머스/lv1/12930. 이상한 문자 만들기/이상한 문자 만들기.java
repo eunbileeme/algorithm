@@ -2,6 +2,9 @@ import java.util.*;
 
 class Solution {
     public String solution(String s) {
+        // 공백이 연속으로 2개 이상 있을 경우, 배열의 element로 취급
+        // ex. "try  hello world"
+        // ["try", "", "hello", "world"]
         String[] arr = s.split(" ", -1);
         
         for (int i = 0; i < arr.length; i ++) {
