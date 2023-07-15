@@ -6,8 +6,9 @@ class Solution {
         
         for (int i = 1; i < food.length; i ++) {
             // 0 이전까지, result / 2만 반복하기 위해서는 2중 for문으로 순회해야 함
-            int repeatTime = food[i] / 2;
-            for (int j = 0; j < repeatTime; j ++) {
+            // 자바에서는 / 계산 시, 정수 부분만 몫으로 도출
+            int repeatCount = food[i] / 2;
+            for (int j = 0; j < repeatCount; j ++) {
                 // i (int) -> i (String)
                 answer += Integer.toString(i);
             }
