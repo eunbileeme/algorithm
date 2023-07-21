@@ -7,6 +7,9 @@ class Solution {
             for (int j = 1; j * j <= i; j ++) {
                 if (i % j == 0) {
                     cnt ++;
+                    // j가 i의 제곱근인 경우, 카운트 하지 않음
+                    // 9 / 3 != 3
+                    // 3 != 3 -> false
                     if (i / j != j)
                         cnt ++;
                 }
