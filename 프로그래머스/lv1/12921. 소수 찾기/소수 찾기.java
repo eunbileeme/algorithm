@@ -1,3 +1,5 @@
+// 에라토스테네스의 체
+
 class Solution {
     public int solution(int n) { 
         int answer = 0;
@@ -12,7 +14,7 @@ class Solution {
         for (int i = 2; i <= root; i ++) {
             // i 번째의 수가 소수일 때
             if (prime[i] == true) {
-                //그 배수들을 다 false로 초기화(배수는 소수가 아니기 때문) 
+                // 그 배수들을 다 false로 초기화(배수는 소수가 아니기 때문) 
                 for (int j = i; i * j <= n; j ++)
                     prime[i * j] = false;
             }
