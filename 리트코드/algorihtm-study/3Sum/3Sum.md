@@ -8,4 +8,5 @@
 
 ![image](https://github.com/eunbileeme/algorithm/assets/103405457/fa7394eb-3be6-4655-b160-59f17646be23)
 
-
+## 풀이
+![image](https://github.com/eunbileeme/algorithm/assets/103405457/177ddd1b-9ab0-4301-8706-384f83152278)
