@@ -8,9 +8,11 @@
 
 ## 풀이
 - DFS
+
 ![image](https://github.com/eunbileeme/algorithm/assets/103405457/953acca1-dca9-495e-8efb-9de8bb8de45d)
 
 - BFS
+
 ![image](https://github.com/eunbileeme/algorithm/assets/103405457/e708e10f-0fb3-4777-bebb-e02389f335bb)
 
 ### 시간 복잡도 : O(NN)
