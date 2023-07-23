@@ -14,6 +14,7 @@ class Solution {
             // int[]가 아닌 Integer[]이어야 함
             Integer[] array = Arrays.copyOfRange(arr, i, Math.min(arr.length, i + m));
             Arrays.sort(array);
+            // n번 반복 = n개의 상자 개수
             answer += array[0] * m;
         }
         
