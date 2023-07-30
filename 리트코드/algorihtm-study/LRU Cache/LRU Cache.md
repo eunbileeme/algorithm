@@ -1,7 +1,7 @@
 # Review
 - 예제 1: get(1) 수행함으로써 2가 제일 오래된 데이터 -> 지움
 - 순서를 기억할 구조 + key - value를 저장할 구조(Map)
-- O(1) -> Map, LinkedList
+- O(1) -> Map, LinkedList(Placehorder)
 
 ## 결론
 - 이해가 될 때까지 보는 걸 추천
