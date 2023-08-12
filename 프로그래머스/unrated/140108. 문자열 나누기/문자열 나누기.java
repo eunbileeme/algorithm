@@ -1,18 +1,43 @@
 class Solution {
     public int solution(String s) {
-        int answer = 1; // 분해할 문자열의 개수
-        char x = s.charAt(0); // "banana" -> "b"
-        int count = 1; // 첫 문자열의 개수와 다른 문자열의 개수의 차이
+        int answer = 1;
+        int f = 1; // 첫 문자가 나온 횟수
+        int l = 0; // 뒤의 문자들이 나온 횟수
+        int left = 0; // charAt를 수행할 시작점
+        int right = 1; // 비교할 문자의 인덱스
         
-        for (int i = 1; i < s.length(); i++) {
-            if (count == 0) {
-                answer++;
-                x = s.charAt(i);
-            }
-            if (x == s.charAt(i)) {
-                count++;
+        // "banana" -> s.length() : 6
+        while (right < s.length()) {
+            // f = 1 != l = 0
+            // f = 1 == l = 1
+            // f = 1 != l = 0
+            // f = 1 == l = 1
+            if (f == l) {
+                // left = 2
+                // left = 3
+                left = right;
+                // right = 3
+                // right = 4
+                right += 1;
+                f = 1;
+                l = 0;
+                // answer = 2
+                // answer = 3
+                answer ++;
             } else {
-                count--;
+                // "b" != "a"
+                // "n" != "a"
+                if (s.charAt(left) == s.charAt(right)) {
+                    f ++;
+                }
+                else {
+                    // l = 1
+                    // l = 1
+                    l ++;
+                }
+                // right = 2
+                // right = 4
+                right ++;
             }
         }
         
