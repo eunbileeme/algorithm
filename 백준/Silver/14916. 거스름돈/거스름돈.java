@@ -1,4 +1,4 @@
-// 그리디
+// 그리디 : https://subin-programming.tistory.com/232
 import java.io.*;
 
 public class Main {
