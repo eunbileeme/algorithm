@@ -19,6 +19,8 @@ public class Main {
             cnt ++;
         }
 
+        // 5 또는 2원으로 나눠줄 수 없는 경우에도, while문은 항상 true임으로 내부의 로직을 수행
+        // 따라서 5 또는 2원으로 나눠줄 수 없다면, 수중의 돈이 음수인 상황일 것
         if (n < 0) {
             System.out.println(-1);
         } else {
