@@ -1,4 +1,5 @@
 // 그리디 : https://buzz-program.tistory.com/entry/%ED%8C%8C%EC%9D%B4%EC%8D%AC-BOJ2828%EC%82%AC%EA%B3%BC-%EB%8B%B4%EA%B8%B0-%EA%B2%8C%EC%9E%84
+// 전체적으로 바구니의 이동 거리를 최소화
 import java.io.*;
 import java.util.StringTokenizer;
 
