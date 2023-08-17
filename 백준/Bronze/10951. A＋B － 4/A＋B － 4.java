@@ -8,7 +8,7 @@ public class Main {
         String str;
 
         // ※ 입력의 첫 번째 혹은 두 번째 줄에 n개의 값이 주어지지 않았으므로
-        // String + while() 문을 이용해 행에 데이터가 없을 때까지 반복
+        // String + while() 문을 이용해 행에 데이터가 있을 때까지 반복
         while ((str = br.readLine()) != null) {
             st = new StringTokenizer(str, " ");
             int a = Integer.parseInt(st.nextToken());
