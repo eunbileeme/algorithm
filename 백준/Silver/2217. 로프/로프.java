@@ -1,4 +1,5 @@
 // 그리디
+// 현재 로프를 추가하여 들 수 있는 최대 중량 vs 최대 중량을 들 수 있는 로프의 최대 중량
 import java.io.*;
 import java.util.Arrays;
 
