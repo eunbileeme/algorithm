@@ -12,7 +12,7 @@ public class Main {
             count[num] ++;
         }
 
-        int max = - 1;
+        int max = 0;
         char answer = '?';
         for (int i = 0; i < count.length; i ++) {
             // ※ 배열을 순회하면서 각 알파벳의 빈도수를 비교 후, 가장 큰 빈도수를 max에 저장
