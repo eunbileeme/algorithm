@@ -7,7 +7,6 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int a = Integer.parseInt(br.readLine());
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-
         int[] arr = new int[a];
 
         for (int i = 0; i < a; i ++) {
@@ -16,7 +15,6 @@ public class Main {
         Arrays.sort(arr);
 
         System.out.print(arr[0] + " " + arr[a - 1]);
-
         br.close();
     }
 }
