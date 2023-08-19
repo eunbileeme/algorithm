@@ -15,7 +15,7 @@ public class Main {
         int[] cnt = new int[10];
 
         for (int i = 0; i < stringSum.length(); i ++) {
-            if ('0' == stringSum.charAt(i))
+            if ('0' == stringSum.charAt(i)) // arr[(str.charAt(i) - '0')]++;
                 cnt[0] ++;
             else if ('1' == stringSum.charAt(i))
                 cnt[1] ++;
