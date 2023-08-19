@@ -31,7 +31,7 @@ public class Main {
             // XXXX..XX.XX -> ["XXXX", "", "XX", "XX"]
             // i = 0일 때, "AAAA" -> if -> "AAAA."
             // i = 1일 때, if -> "AAAA.."
-            // i = 2일 때, "AAAA..BB" -> if -> "AAAA..BB."
+            // i = 2일 때, "AAAA..BB" -> if -> "AAAA..BB."..
             if (i != strArr.length - 1)
                 sb.append(".");
         }
