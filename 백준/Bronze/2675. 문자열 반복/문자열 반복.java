@@ -1,12 +1,13 @@
 import java.io.*;
 import java.util.StringTokenizer;
 
+// ※ 3중 for문 말고 더 좋은 방법은 없을까?
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
 
-        // ※ 자바는 문자열에 * n만큼 반복시킬 수 없음
+        // ※ 자바는 문자열에 * n만큼 반복시킬 수 없음 -> print() 혹은 StringBuilder로 해결
         for (int i = 0; i < n; i ++) {
             StringTokenizer st = new StringTokenizer(br.readLine(), " ");
             // 3
