@@ -12,4 +12,5 @@
 - i : 실제 인덱스 // write 인덱스
 ![image](https://github.com/eunbileeme/algorithm/assets/103405457/fcf60065-1454-4ee1-ae69-78523da64cf8)
 
-
+### 비슷한 문제
+- Merge k Sorted List(Hard)
