@@ -1,3 +1,4 @@
+// 브루트포스 알고리즘 : https://dev-coco.tistory.com/146 (개선된 코드)
 import java.io.*;
 import java.util.Arrays;
 
