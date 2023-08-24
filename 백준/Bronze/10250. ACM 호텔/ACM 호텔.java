@@ -17,11 +17,16 @@ public class Main {
             // 즉, 프로그래밍에서 첫 번째는 0에 해당하기 때문에 -1을 수행
             
             // ※ 몫 연산 : 그 층에서 몇 번째 방에 위치해야 하는지
-            int width = (person - 1) / h + 1;
+            int width = person / h;
             // ※ 나머지 연산 : 손님이 어떤 층에 위치해야 하는지
-            int height = (person - 1) % h + 1;
+            int height = person % h;
+            
+            if (height == 0) {
+                height = h;
+                width -= 1;
+            }
 
-            System.out.println(height * 100 + width);
+            System.out.println(height * 100 + width + 1);
         }
 
         br.close();
