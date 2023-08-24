@@ -1,5 +1,6 @@
 import java.io.*;
 
+// 브루트포스 알고리즘 : https://c-king.tistory.com/177
 // ※ 어디까지 삼각수를 구해야하지? + 삼각수의 합을 어떻게 조합하지? (ex. 1 + 1 + 1, 1 + 1 + 3, ..)
 public class Main {
     static int arr[];
