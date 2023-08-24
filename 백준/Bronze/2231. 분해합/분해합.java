@@ -1,3 +1,5 @@
+// ※ https://st-lab.tistory.com/98 (질문)
+
 import java.io.*;
 
 // ※ m의 분해합 = n
