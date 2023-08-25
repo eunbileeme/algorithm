@@ -19,5 +19,7 @@ public class Main {
         }
 
         System.out.println(days);
+        
+        br.close();
     }
 }
