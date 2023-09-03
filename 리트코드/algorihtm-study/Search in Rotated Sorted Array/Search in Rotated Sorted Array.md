@@ -16,3 +16,13 @@
   - 그 사이에 내가 찾고자하는 값이 있는 경우 
  
 ![image](https://github.com/eunbileeme/algorithm/assets/103405457/c9b77cda-ccde-436b-bbbb-98d68201f95e)
+
+## nums가 중복이 허용되는 경우란?
+- 중복이 생기는 경우만 l과 r을 카운트해서 줄여주는 방법으로 해결할 수 있음
+
+### 시간복잡도
+- 이론적인 시간 복잡도는 O(n)이지만, 줄인 경우에서는 O(logn)으로 동작
+
+![image](https://github.com/eunbileeme/algorithm/assets/103405457/807358b9-5ef7-4ebc-9b10-e36df88fc21f)
+
+
