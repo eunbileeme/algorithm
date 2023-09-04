@@ -41,7 +41,6 @@ public class Main {
             int m = l + (r - l) / 2;
 
             if (arr[m] == target) return 1;
-
             if (target < arr[m]) {
                 r = m - 1;
             } else {
