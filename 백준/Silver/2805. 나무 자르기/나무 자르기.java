@@ -23,12 +23,12 @@ public class Main {
     }
 
     private static int getValue(int[] arr, int heightMax) {
-        int l = 0, r = arr[arr.length - 1];
+        int l = 0, r = arr[arr.length - 1]; // ※ 왜 l = arr[0]이면 틀릴까?
         int result = 0;
 
         while (l <= r) {
             int m = l + (r - l) / 2; // ※ 절단기의 높이(단, 최댓값을 구하는 게 목적)
-            long sum = 0;
+            long sum = 0; // ※ 오버플로우가 왜 발생?
 
             for (int i = 0; i < arr.length; i ++) {
                 if (arr[i] > m)
