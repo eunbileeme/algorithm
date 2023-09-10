@@ -16,3 +16,5 @@
 - dx, dy : 4방향 탐색
 ![image](https://github.com/eunbileeme/algorithm/assets/103405457/dae74bb1-8ad1-45a8-b103-57efeeeb690f)
 
+### 경로의 길이가 아니라 경로를 return하는 방식이라면?
+- return 값에 경로의 content를 return하는 방식으로 수행
