@@ -20,7 +20,7 @@
 - [정렬] [수 정렬하기 2](https://www.acmicpc.net/problem/2751) (시간 초과)
   - (1) 정렬 비용을 줄이기 위해 고민
   - (2) 출력 비용을 줄이기 위해 고민
-- [수힉] [달팽이는 올라가고 싶다](https://www.acmicpc.net/problem/2869)
+- [수학] [달팽이는 올라가고 싶다](https://www.acmicpc.net/problem/2869)
   - (1) 시간 초과를 해결하기 위해 고민
   - (2) 총 날짜를 구할 때, 왜 +1을 하는지 고민
 - [정렬] [단어 정렬](https://www.acmicpc.net/problem/1181)
