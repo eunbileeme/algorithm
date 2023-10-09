@@ -6,7 +6,7 @@ public class Main {
     private static int apartNum = 0;
     private static int[][] map;
     private static boolean[][] visited;
-    private static int[] apart = new int[25 * 25]; // ※ 지도에서 가질 수 있는 단지의 총 집의 수
+    private static int[] apart; // ※ map을 기반으로 구한 각 단지 내의 총 집의 수
     private static int dx[] = {-1, 1, 0, 0};
     private static int dy[] = {0, 0, -1, 1};
 
@@ -16,6 +16,7 @@ public class Main {
 
         map = new int[n][n];
         visited = new boolean[n][n];
+        apart = new int[n * n];
 
         // 1. 전체 map 입력 받기
         for (int i = 0; i < n; i ++) {
@@ -29,13 +30,13 @@ public class Main {
         for (int i = 0; i < n; i ++) {
             for (int j = 0; j < n; j ++) {
                 if (map[i][j] == 1 && !visited[i][j]) {
-                    apartNum ++;
+                    apartNum ++; // ※ 범위 = 단지 한 번을 순회하기 전에만 증가하는 값이므로 각 단지의 수
                     bfs(i, j);
                 }
             }
         }
 
-        Arrays.sort(apart);
+        Arrays.sort(apart); // ※ ArrayList로 개선하는게 나을듯
         System.out.println(apartNum);
 
         // 3. 1차원 배열 answer에서 각 단지 내 집의 수를 출력
@@ -43,6 +44,8 @@ public class Main {
             if (apart[i] != 0)
                 System.out.println(apart[i]);
         }
+        
+        br.close();
     }
 
     private static void bfs(int x, int y) {
