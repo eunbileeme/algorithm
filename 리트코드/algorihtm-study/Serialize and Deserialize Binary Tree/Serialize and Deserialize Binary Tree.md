@@ -13,4 +13,5 @@
 
 ## 풀이
 - pre-order 방식으로 풀이
+
 ![image](https://github.com/eunbileeme/algorithm/assets/103405457/fac3bf2a-39d1-4a8d-a2c2-82506f4eb586)
