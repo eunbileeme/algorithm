@@ -1,44 +1,47 @@
 import java.io.*;
-import java.util.*;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st1 = new StringTokenizer(br.readLine(), " ");
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        int n = Integer.parseInt(st1.nextToken());
-        int m = Integer.parseInt(st1.nextToken());
+        int n = Integer.parseInt(st.nextToken()); // 나무의 수 : n
+        int m = Integer.parseInt(st.nextToken()); // 집으로 가져가려는 나무의 길이 : m
+
         int[] arr = new int[n];
-
-        StringTokenizer st2 = new StringTokenizer(br.readLine(), " ");
+        st = new StringTokenizer(br.readLine(), " ");
         for (int i = 0; i < n; i ++) {
-            arr[i] += Integer.parseInt(st2.nextToken());
+            arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        Arrays.sort(arr);
+        Arrays.sort(arr); // [10, 15, 17, 20]
 
-        System.out.println(getValue(arr, m));
-
+        System.out.println(bst(arr, m)); // m만큼 길이의 나무를 집에 가져가기 위해서 절단기에 설정할 수 있는 높이의 최댓값
         br.close();
     }
 
-    private static int getValue(int[] arr, int heightMax) {
-        int l = 0, r = arr[arr.length - 1]; // ※ 왜 l = arr[0]이면 틀릴까?
-        int result = 0;
+    private static long bst(int[] arr, int target) {
+        int l = 0, r = arr[arr.length - 1]; // l = 0, r = 20
+        long result = 0; // ※ 리턴해주기 위한 변수
 
         while (l <= r) {
-            int m = l + (r - l) / 2; // ※ 절단기의 높이(단, 최댓값을 구하는 게 목적)
-            long sum = 0; // ※ 오버플로우가 왜 발생?
+            int m = l + (r - l) / 2;
+            long sum = 0; // ※ 오버플로우 방지를 위해 long으로 변경
 
             for (int i = 0; i < arr.length; i ++) {
-                if (arr[i] > m)
+                if (arr[i] >= m) {
                     sum += arr[i] - m;
+                }
             }
 
-            // ※ sum이 heightMax보다 작다면
-            // = 원하는 나무의 길이보다 덜 잘랐다면
-            // = 절단기의 높이가 너무 높게 설정된 것이므로, 절단기의 높이를 낮추기 위해 r의 범위를 줄임
-            if (sum < heightMax) {
+            // if (sum == target) return m;
+
+            // ※ 자른 나무 길의 합(sum)이 집으로 가져가려고 하는 나무의 길이보다 작다면
+            // 절단기의 높이가 너무 높은 것, 따라서 높이를 줄여야 함
+            if (sum < target) {
+                // result = m;
                 r = m - 1;
             } else {
                 result = m;
@@ -46,6 +49,6 @@ public class Main {
             }
         }
 
-        return result; // ※ 반환하고자 하는 값
+        return result;
     }
 }
