@@ -15,5 +15,18 @@
 ![image](https://github.com/eunbileeme/algorithm/assets/103405457/8ca1ebc4-9714-47c6-aab5-d88b118d8e8b)
 
 ### 질문
-1. 조건을 만족하는 최솟값 -> while (l < r)
+1. 조건을 만족하는 최솟값 -> while (l < r) (★)
+- 그림을 그려서 원소가 두 개인 경우를 생각하면 좋음
+
+![image](https://github.com/eunbileeme/algorithm/assets/103405457/2cf945c2-8ba6-4514-8b6c-48e134e71124)
+
+(1) 처음에 m은 l을 가리킴
+- 왜지?
+(2) 이때, l과 r 모두 T일 경우 / l이 F 및 r이 T일 경우 / l과 r 모두 F일 경우로 케이스가 나뉨
+..
+
+즉, l < r일 경우는
+- r의 위치는 조건을 언제나 만족하지만
+- l은 루프가 종료되기 전까지 만족하지 않음
+
 2. i --;
