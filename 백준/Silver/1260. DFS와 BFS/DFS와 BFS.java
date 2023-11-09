@@ -1,79 +1,60 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class Main {
-    public static ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
-    public static boolean[] visited;
-    public static StringBuilder sb = new StringBuilder();
+    private static final ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
+    private static boolean[] visited;
+    private static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+        int v = Integer.parseInt(st.nextToken());
 
-        int n = Integer.parseInt(st.nextToken()); // 정점의 개수(4)
-        int m = Integer.parseInt(st.nextToken()); // 간선의 개수(5)
-        int v = Integer.parseInt(st.nextToken()); // 정점의 번호(1)
-
-        /*
-        * graph
-        * [[]]
-        * [[], []]
-        * [[], [], []]
-        * [[], [], [], []]
-        * [[], [], [], [], []]
-        */
-
+        // 1. 초기화
         for (int i = 0; i <= n; i++) {
             graph.add(new ArrayList<>());
         }
 
+        // 2. 간선 정보 추가
         for (int i = 0; i < m; i++) {
-            st = new StringTokenizer(br.readLine());
+            st = new StringTokenizer(br.readLine(), " ");
 
             int node1 = Integer.parseInt(st.nextToken());
             int node2 = Integer.parseInt(st.nextToken());
 
-            /*
-            * [[], [2], [], [], []]
-            * [[], [2, 3], [1], [], []]
-            * [[], [2, 3, 4], [1], [1], []]
-            * [[], [2, 3, 4], [1, 4], [1], [1]]
-            * [[], [2, 3, 4], [1, 4], [1, 4], [1, 2]]
-            */
-
             graph.get(node1).add(node2);
-
-            /*
-             * [[], [2], [1], [], []]
-             * [[], [2, 3], [1], [1], []]
-             * [[], [2, 3, 4], [1], [1], [1]]
-             * [[], [2, 3, 4], [1, 4], [1], [1, 2]]
-             * [[], [2, 3, 4], [1, 4], [1, 4], [1, 2, 3]]
-             */
-
-            graph.get(node2).add(node1); // 양방향
+            graph.get(node2).add(node1);
         }
 
-        // ※ 이웃 정점들을 오름차순으로 정렬
-        // -> [[], [2, 3, 4], [1, 4], [1, 4], [1, 2, 3]]
+        // 3. 초기화
+        visited = new boolean[n + 1];
+
+        // 4. 정렬
         for (int i = 1; i <= n; i++) {
             Collections.sort(graph.get(i));
         }
 
-        // ※ 인덱스는 0부터 시작하지만, 정점은 1부터 시작하므로 + 1
-        visited = new boolean[n + 1];
-
+        // 5. dfs
         dfs(v);
+
         sb.append('\n');
+
+        // 6. 재초기화
         Arrays.fill(visited, false);
 
+        // 7. bfs
         bfs(v);
 
         System.out.println(sb);
         br.close();
     }
 
-    private static void dfs(int node) {
+    private static void dfs (int node) {
         visited[node] = true;
         sb.append(node + " ");
 
@@ -84,18 +65,19 @@ public class Main {
         }
     }
 
-    private static void bfs(int start) {
-        Queue<Integer> queue = new LinkedList<>();
-        queue.offer(start);
-        visited[start] = true;
+    private static void bfs (int node) {
+        Queue<Integer> q = new LinkedList<>();
+        q.offer(node);
 
-        while (!queue.isEmpty()) {
-            int node = queue.poll();
-            sb.append(node + " ");
+        visited[node] = true;
 
-            for (int adjNode : graph.get(node)) {
+        while (!q.isEmpty()) {
+            int tempNode = q.poll();
+            sb.append(tempNode + " ");
+
+            for (int adjNode : graph.get(tempNode)) {
                 if (!visited[adjNode]) {
-                    queue.offer(adjNode);
+                    q.offer(adjNode);
                     visited[adjNode] = true;
                 }
             }
