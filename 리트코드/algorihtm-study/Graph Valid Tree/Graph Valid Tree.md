@@ -9,8 +9,9 @@
   - 모든 엣지를 순회해보면 됨
   - 한 노드를 travling 해보았을 때, ..
 
-### ※ Disjoint Set
-- 자주 풀어보는 것을 추천
+### ※ Disjoint Set(표현 방법) = Union find(탐색 방법) feat. LeetCode explore lecture
+- 자주 풀어보는 것을 추천(손으로 풀어보는 것을 추천?)
+  - 사이클이 있는지 판단할 때 추천 / 또는 사이클이 있다 싶을 때 추천 
 - 또는 dfs/bfs로 중복 체크를 통해 풀이 가능
 
 ## 풀이
