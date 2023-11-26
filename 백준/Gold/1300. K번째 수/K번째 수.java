@@ -15,6 +15,17 @@ public class Main {
         br.close();
     }
 
+    /*
+    * B[k] 구하기
+    * = 특정값 찾기
+    *
+    * lower bound(= 하한 값) : 찾고자 하는 값 이상의 값이 처음으로 나타나는 위치
+    * <-> upper bound가 아닌 이유로는 구하고자 한 B[k]를 처음으로 초과하는 위치가 upper bound인데..
+    * 이럴 경우, 찾고자 하는 값 자체를 못 찾기 때문에 아님
+    *
+    * m (구하고자 하는 값) : 값 <-> 인덱스
+    */
+
     private static long binarySearch(int n, int target) {
         long l = 1;
         long r = target;
@@ -27,8 +38,8 @@ public class Main {
             for (int i = 1; i <= n; i++) {
                 cnt += Math.min(m / i, n);
             }
-            
-            if (target <= cnt) { // 작거나 같은 -> 조건을 만족하는 값들 중에 가장 최댓값
+
+            if (target <= cnt) {
                 result = m;
                 r = m - 1;
             } else {
