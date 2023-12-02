@@ -1,34 +1,32 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Stack;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
+        // 1. 입력 변수 초기화
         int k = Integer.parseInt(br.readLine());
         Stack<Integer> stack = new Stack<>();
 
-        for (int i = 0; i < k; i ++) {
-            int tmp = Integer.parseInt(br.readLine());
-            if (tmp != 0) {
-                stack.push(tmp);
-            }
-            if (tmp == 0) {
+        // 2. 로직
+        for (int i = 1; i < k + 1; i ++) {
+            int element = Integer.parseInt(br.readLine());
+
+            if (element == 0) {
                 stack.pop();
+            } else {
+                stack.push(element);
             }
         }
 
+        // 3. 출력
         int sum = 0;
-        int size = stack.size();
-        for (int i = 0; i < size; i ++) {
-            if (stack.size()  == 0) {
-                System.out.println(0);
-            } else {
-                sum += stack.peek();
-                stack.pop();
-            }
+        for (Integer e : stack) {
+            sum += e;
         }
 
         System.out.println(sum);
+        br.close();
     }
 }
