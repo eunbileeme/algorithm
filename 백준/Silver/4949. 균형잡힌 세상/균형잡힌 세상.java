@@ -36,7 +36,7 @@ public class Main {
                 } else {
                     stack.pop();
                 }
-            // ※ 닫는 대괄호가 들어왔을 경우    
+            // ※ 닫는 대괄호가 들어왔을 경우
             } else if (c == ']') {
                 if (stack.empty() || stack.peek() != '[') {
                     return "no";
@@ -46,6 +46,7 @@ public class Main {
             }
         }
 
+        // ※ 괄호들이 짝을 모두 이뤄서 stack이 비어있다면
         if (stack.empty()) return "yes";
         else return "no";
     }
