@@ -14,15 +14,15 @@
  
 ## 풀이
 
-![image](https://github.com/eunbileeme/algorithm/assets/103405457/b759cb0e-b9ac-4c54-a19f-011b70fbb103)
-
 - DAG
   - 두 번째 노드가 첫 번째 노드를 향해 단방향으로 연결
   - 스프링에서 빈을 주입할 때도, 위와 같은 위상 정렬 개념을 사용
 
-![image](https://github.com/eunbileeme/algorithm/assets/103405457/06f062e1-4e0f-4ef9-bb9a-407a3ce62c4a)
+![image](https://github.com/eunbileeme/algorithm/assets/103405457/b759cb0e-b9ac-4c54-a19f-011b70fbb103)
 
 - 해당 노드를 방문하기 전에 방문해야 하는 노드들 = indegree
+
+![image](https://github.com/eunbileeme/algorithm/assets/103405457/06f062e1-4e0f-4ef9-bb9a-407a3ce62c4a)
 
 ### 위상 정렬
 
