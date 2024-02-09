@@ -28,7 +28,7 @@ public class Main {
     private static ArrayList<ArrayList<Node>> adjacencyList;
     // private static boolean[] visited; 필요 없는 거 맞는듯
     private static int[] dist;
-    private static int INF = 200_000_000; // 상수 변수명이니까 상수로 빼는게 나을듯
+    private static int INF = 100_000_000; // 상수 변수명이니까 상수로 빼는게 나을듯
     private static int n, e;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
