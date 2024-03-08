@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.*;
 
 // TODO 1. 전위순회한 결과들을 기반으로 트리를 구성한다.
+//  -> 또, 굳이 전위 순회를 할 필요는 없었음
 // TODO 1-1. 이때, 전위 순회(루트 - 왼쪽 - 오른쪽)순을 기반으로 트리를 구성 -> 재귀로 구성하는게 제일 무난할 것 같은데?
 // TODO 1-2. 즉, 첫 번째 값을 부모 노드로 지정하고 좌/우의 자식 노드를 구성
 // TODO 2. 해당 트리를 바탕으로 트리 순회
@@ -44,7 +45,11 @@ public class Main {
         }
 
         postorder(current.left);
+//        System.out.println("current.left = " + current.left);
+
         postorder(current.right);
+//        System.out.println("current.right = " + current.right);
+
         System.out.println(current.val);
     }
 
