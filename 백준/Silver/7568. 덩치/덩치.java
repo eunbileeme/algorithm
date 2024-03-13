@@ -1,31 +1,56 @@
 import java.io.*;
+import java.util.*;
 
 public class Main {
+    // TODO : 덩치 = x + y
+    // ex. A (56, 177) / B (45, 165) = 56 > 45, 177 > 165 => A > B
+    // ex. C (45, 181) / (55, 173) = 45 < 55, 181 > 173 => 규정 x
+
+    // TODO x, y를 모두 비교해야 함
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         int n = Integer.parseInt(br.readLine());
+        StringBuilder sb = new StringBuilder();
 
-        // ※ 2차원 배열로 할지, HashMap으로 할지 고민하다가 이도저도 아니게 된 문제..
-        int[][] arr = new int[n][2];
+        // 1. 입력
+        int[][] size = new int[n][2];
+        for (int i = 0; i < n; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        String[] sp;
-        for (int i = 0; i < n; i ++) {
-            sp = br.readLine().split(" ");
-            arr[i][0] = Integer.parseInt(sp[0]); // 키
-            arr[i][1] = Integer.parseInt(sp[1]); // 몸무게
+            for (int j = 0; j < 2; j++) {
+                size[i][j] = Integer.parseInt(st.nextToken());
+            }
         }
 
-        for (int i = 0; i < n; i ++) {
+//        for (int[] ints : size) {
+//            System.out.println(Arrays.toString(ints));
+//        }
+
+//        int[][] copySize = Arrays.copyOf(size, size.length);
+//        Arrays.sort(copySize, (x, y) -> Integer.compare(y[0], x[0]));
+
+        // 2. x, y 비교
+        // TODO 첫 번째 값(ex. size[0][0])을 기준으로 두 번째, 세 번째, .. , 다섯 번째 값과 행열을 비교해야 함
+        // 이때, 2중 for문을 행열이 아닌 행간의 이동으로 보면 어떨까??
+        for (int i = 0; i < n; i++) {
+            // 덩치 등수는 k + 1부터..
             int rank = 1;
-            for (int j = 0; j < n; j ++) {
+
+            for (int j = 0; j < n; j++) {
+                // 자기 자신과의 값 비교는 제외
                 if (i == j) continue;
-                if (arr[i][0] < arr[j][0] && arr[i][1] < arr[j][1]) {
-                    rank ++;
+
+                if (size[i][0] < size[j][0] && size[i][1] < size[j][1]) {
+                    rank++;
                 }
             }
 
-            System.out.print(rank + " ");
+            sb.append(rank + " ");
         }
+
+        sb.deleteCharAt(sb.length() - 1);
+        System.out.println(sb);
+
+        br.close();
     }
 }
