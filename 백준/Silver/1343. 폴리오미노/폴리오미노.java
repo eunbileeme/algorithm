@@ -1,5 +1,4 @@
-// 그리디 : https://tang25.tistory.com/entry/%EB%B0%B1%EC%A4%80-1343%EB%B2%88-%ED%8F%B4%EB%A6%AC%EC%98%A4%EB%AF%B8%EB%85%B8-%EC%97%84%ED%83%B1-%EA%B0%9C%EB%B0%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B7%B8%EB%A6%AC%EB%94%94-%EC%9E%90%EB%B0%94
-// 가장 큰 블록인 "AAAA"로 대체한 후 나머지가 있다면 "BB"로 대체
+// 그리디 : 가장 큰 블록인 "AAAA"로 대체한 후 나머지가 있다면 "BB"로 대체
 import java.io.*;
 
 public class Main {
@@ -31,7 +30,7 @@ public class Main {
             // XXXX..XX.XX -> ["XXXX", "", "XX", "XX"]
             // i = 0일 때, "AAAA" -> if -> "AAAA."
             // i = 1일 때, if -> "AAAA.."
-            // i = 2일 때, "AAAA..BB" -> if -> "AAAA..BB."..
+            // i = 2일 때, "AAAA..BB" -> if -> "AAAA..BB."
             if (i != strArr.length - 1)
                 sb.append(".");
         }
