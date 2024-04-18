@@ -44,11 +44,14 @@ public class Main {
 
         // 4. value 기준, 가장 나이가 적은 사람 / 가장 나이가 많은 사람
         // key 기준, 이름을 가져와서 출력
-        String old = Collections.max(map.entrySet(), comparator).getKey();
-        String young = Collections.min(map.entrySet(), comparator).getKey();
+        // System.out.println("map.entrySet() = " + map.entrySet());
+        String young = Collections.max(map.entrySet(), comparator).getKey(); // 어리다 -> 값이 크다 -> amx
+        // System.out.println(Collections.max(map.entrySet(), comparator));
+        String old = Collections.min(map.entrySet(), comparator).getKey();
+        // System.out.println(Collections.min(map.entrySet(), comparator));
 
-        System.out.println(old);
         System.out.println(young);
+        System.out.println(old);
 
         br.close();
     }
