@@ -1,5 +1,4 @@
-// 그리디 : https://buzz-program.tistory.com/entry/%ED%8C%8C%EC%9D%B4%EC%8D%AC-BOJ2828%EC%82%AC%EA%B3%BC-%EB%8B%B4%EA%B8%B0-%EA%B2%8C%EC%9E%84
-// 전체적으로 바구니의 이동 거리를 최소화
+// 그리디
 import java.io.*;
 import java.util.StringTokenizer;
 
@@ -19,7 +18,6 @@ public class Main {
         for (int i = 0; i < appleCount; i ++) {
             int where = Integer.parseInt(br.readLine());
 
-            // ※ 아래와 같이 고려하거나 또는 고려하지 않고 사과가 바구니의 오른쪽에 가깝게 떨어지는 경우를 else if로 처리하거나 ❗
             // 바구니 안에 떨어지는 경우
             if(left <= where && where <= right) {
                 continue;
