@@ -2,5 +2,6 @@
 # 이때, 이름이 없을 경우 no name
 # coalesce(nullif(컬럼, ' '), '바꾸고자 하는 값') as 컬럼
 
-SELECT animal_type, coalesce(nullif(name, ' '), 'No name') as name, sex_upon_intake from animal_ins
-order by animal_id;
+SELECT ANIMAL_TYPE, COALESCE(NAME, 'No name') AS NAME, SEX_UPON_INTAKE
+FROM ANIMAL_INS 
+ORDER BY ANIMAL_ID;
