@@ -29,17 +29,15 @@ class Solution {
     private void generatePermutations(char[] nums, String current, Set<Integer> uniqueNumbers) {
         if (!current.isEmpty()) {
             int num = Integer.parseInt(current);
-            // System.out.println("num = " + num);
-            uniqueNumbers.add(num);  // 중복되지 않은 숫자를 Set에 추가
+            uniqueNumbers.add(num);
         }
         
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == '-') continue; // 이미 사용된 숫자는 스킵
+            if (nums[i] == '-') continue; 
             char temp = nums[i];
-            nums[i] = '-'; // 숫자를 사용된 상태로 표시
-            // System.out.println(current + temp);
+            nums[i] = '-';
             generatePermutations(nums, current + temp, uniqueNumbers);
-            nums[i] = temp; // 원상복구
+            nums[i] = temp;
         }
     }
 
