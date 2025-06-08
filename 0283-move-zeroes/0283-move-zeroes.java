@@ -9,7 +9,6 @@ class Solution {
         int temp = 0;
         for (int rightIndex = 0; rightIndex < nums.length; rightIndex ++) {
             if (nums[rightIndex] != 0) {
-                System.out.println(nums[rightIndex]);
                 temp = nums[rightIndex];
                 nums[rightIndex] = nums[leftIndex];
                 nums[leftIndex] = temp;
